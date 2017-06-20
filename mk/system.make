@@ -48,6 +48,11 @@ else ifeq ($(UNAME),Linux)
     SYSTEM= DF2_SIM
     SYSTEM_MAKEFILE= df2_sim.make
   endif
+  ifeq ($(findstring quadknl,$(HOSTNAME)),quadknl)
+#  ifeq ($(HOSTNAME),quadknl2.lbl.gov)
+    SYSTEM=QUADKNL
+    SYSTEM_MAKEFILE= quadknl.make
+  endif
   ifeq ($(SYSTEM),)
     SYSTEM= AGRI
     SYSTEM_MAKEFILE= agri.make
